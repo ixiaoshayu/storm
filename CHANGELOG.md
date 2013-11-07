@@ -1,4 +1,10 @@
-## Unreleased (0.9.0)
+## 0.9.0-rc3 (Unreleased)
+
+## 0.9.0-rc2 
+
+* Fixed `storm jar` command to work properly when STORM_JAR_JVM_OPTS is not specified (thanks roadkill001)
+
+## 0.9.0-rc1
 
  * All logging now done with slf4j
  * Replaced log4j logging system with logback
@@ -18,6 +24,16 @@
  * Netty implementation of messaging (thanks anfeng)
  * Include topology id, worker port, and worker id in properties for worker processes, useful for logging (thanks d2r)
  * Tick tuples can now be scheduled using floating point seconds (thanks tscurtu)
+ * Added log viewer daemon and links from UI to logviewers (thanks xiaokang)
+ * DRPC server childopts now configurable (thanks strongh)
+ * Default number of ackers to number of workers, instead of just one (thanks lyogavin)
+ * Validate that Storm configs are of proper types/format/structure (thanks d2r)
+ * FixedBatchSpout will now replay batches appropriately on batch failure (thanks ptgoetz)
+ * Can set JAR_JVM_OPTS env variable to add jvm options when calling 'storm jar' (thanks srmelody)
+ * Throw error if batch id for transaction is behind the batch id in the opaque value (thanks mrflip)
+ * Sort topologies by name in UI (thanks jaked)
+ * Added LoggingMetricsConsumer to log all metrics to a file, by default not enabled (thanks mrflip)
+ * Add prepare(Map conf) method to TopologyValidator (thanks ankitoshniwal)
  * Bug fix: Supervisor provides full path to workers to logging config rather than relative path (thanks revans2) 
  * Bug fix: Call ReducerAggregator#init properly when used within persistentAggregate (thanks lorcan)
  * Bug fix: Set component-specific configs correctly for Trident spouts
